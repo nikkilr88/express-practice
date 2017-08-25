@@ -1,0 +1,20 @@
+body {
+    background: #fff;
+}
+
+h1 {
+    text-align: center;
+}
+
+.col-md-4 .card {
+    min-height: 400px;
+}
+
+img {
+    height: 190px;
+    width: 100%;
+}
+
+#delete-form {
+    display: inline-block;
+}

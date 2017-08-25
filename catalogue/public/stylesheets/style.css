@@ -1,0 +1,279 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: sans-serif;
+}
+
+header {
+  background: #1B1B19;
+  color: whitesmoke;
+  overflow: auto;
+  display: table;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+header h2 {
+  font-family: "Yellowtail";
+  margin: 0;
+  float: left;
+} 
+
+header .fa {
+  float: right;
+  position: relative;
+  top: 10px;
+}
+
+
+/* NAV */
+nav {
+  background: #fff;
+  color: #777;
+  text-align: center;
+  margin: 2px 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 20px;
+}
+
+/*  */
+
+#carousel {
+  height: 300px;
+}
+
+#slide1 {
+  background: url("../images/slide1.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+
+#slide2 {
+  background: url("../images/slide2.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+}
+
+.slideCapt{
+  width: 100%;
+  height: auto;
+  background: rgba(0,0,0,0.15);
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  bottom: 35px;
+}
+/* MAIN */
+main {
+  background: #F7F7F7;
+  overflow: auto;
+  padding-bottom: 50px;
+}
+
+main select {
+  display: block;
+}
+
+main h2 {
+ overflow: hidden;
+ text-align: center;
+ margin: 50px 10px;
+ color: #555;
+ font-weight: normal;
+}
+
+main select {
+  margin: 0 auto;
+}
+
+/* main h2:before,
+main h2:after {
+ background-color: #555;
+ content: "";
+ display: inline-block;
+ height: 1px;
+ position: relative;
+ vertical-align: middle;
+ width: 25%;
+}
+main h2:before {
+ right: 0.5em;
+ margin-left: -50%;
+}
+main h2:after {
+ left: 0.5em;
+ margin-right: -50%;
+} */
+
+main .item {
+  float: left;
+  width: 30%;
+  margin: 1.66%;
+  text-align: center;
+  background: #fff;
+  color: #555;
+  padding: 5px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 10px 1px rgba(0,0,0,0.07);
+}
+
+main .item .img-wrapper {
+  height: 225px;
+  overflow: hidden;
+}
+
+main .item img {
+  width: 100%;
+  height: auto;
+}
+
+main .item h4 {
+  color: #9861a3;
+}
+
+main .item button {
+  border: none;
+  background: #9861a3;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+/* SHOW BOX*/
+.showBox {
+	position: fixed;
+	top: 10px;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	height: 95%;
+	width: 95%;
+	background: #fff;
+	display: none;
+	box-shadow: 0 5px 10px 5px rgba(0,0,0,0.1);
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+.showBox .name {
+	font-weight: bold;
+	font-size: 20px;
+	display: block;
+}
+
+.showBox .price, .showBox .status {
+  display: block;
+}
+
+.showBox .status {
+  font-weight: bold;
+}
+
+.showBox img {
+	width: 50%;
+	float: left;
+	margin: 10px;
+}
+
+/* FOOTER */
+
+footer {
+  background: #1B1B19;
+  text-align: center;
+  padding: 25px 0;
+  display: block;
+}
+
+footer .fa {
+  color: #999;
+  margin: 10px;
+  font-size: 24px;
+}
+/* MOBILE NAV */
+.mobileNav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  text-align: center;
+  display: none;
+  padding: 5px 0;
+  box-shadow: 0 1px 2px 2px rgba(0,0,0,0.1);
+}
+
+.mobileNav .faWrapper {
+  float: left;
+  width: 25%;
+  color: #999;
+}
+
+.mobileNav .faWrapper .material-icons {
+  vertical-align: middle;
+  border-bottom: 2px solid white;
+}
+
+
+/**/
+
+.mobileNav .faWrapper .activeLink, .activeLink {
+  border-bottom: 2px solid #9861a3;
+}
+
+@media (max-width: 600px){
+  main .item {
+    float: none;
+    width: 90%;
+    margin: 10px auto;
+  }
+  main .item img {
+    width: 100%;
+    height: auto;
+  }
+  .showBox {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    overflow: auto;
+  }
+  .showBox img {
+  	max-width: 400px;
+  	width: 90%;
+  	float: none;
+  	display: block;
+  	margin: 10px auto;
+  }
+  nav {
+    display: none !important;
+  }
+  .mobileNav {
+    display: block;
+  }
+  .activeLink {
+    color: #9861a3;
+  }
+  footer {
+    display: none !important;
+  }
+  #slide1 {
+    background: url("../images/mobile/slide1.jpeg");
+    background-size: cover;
+  }
+  #slide2 {
+    background: url("../images/mobile/slide2.jpeg");
+    background-size: cover;
+  }
+}
