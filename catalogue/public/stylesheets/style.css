@@ -47,7 +47,16 @@ nav ul li {
   padding: 20px;
 }
 
-/*  */
+nav ul li a {
+  color: #777;
+}
+
+nav ul li a:hover {
+  text-decoration: none;
+  color: #777;
+}
+
+/* CAROUSEL */
 
 #carousel {
   height: 300px;
@@ -76,7 +85,9 @@ nav ul li {
   position: absolute;
   bottom: 35px;
 }
+
 /* MAIN */
+
 main {
   background: #F7F7F7;
   overflow: auto;
@@ -93,6 +104,10 @@ main h2 {
  margin: 50px 10px;
  color: #555;
  font-weight: normal;
+}
+
+main p {
+  margin: 10px;
 }
 
 main select {
@@ -123,15 +138,15 @@ main .item {
   width: 30%;
   margin: 1.66%;
   text-align: center;
-  background: #fff;
+  background: none;
   color: #555;
   padding: 5px;
   box-sizing: border-box;
-  box-shadow: 0 1px 10px 1px rgba(0,0,0,0.07);
+  box-shadow: none;
 }
 
 main .item .img-wrapper {
-  height: 225px;
+  height: auto;
   overflow: hidden;
 }
 
@@ -150,6 +165,12 @@ main .item button {
   color: #fff;
   padding: 10px;
   border-radius: 5px;
+  margin: 10px;
+}
+
+#about img {
+  width: 25%;
+  float: left;
   margin: 10px;
 }
 
@@ -238,6 +259,8 @@ footer .fa {
     float: none;
     width: 90%;
     margin: 10px auto;
+    background: fff;
+    box-shadow: 0 1px 10px 1px rgba(0,0,0,0.07);
   }
   main .item img {
     width: 100%;
