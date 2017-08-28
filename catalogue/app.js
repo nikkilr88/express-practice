@@ -27,6 +27,10 @@ app.get("/about", function(req, res){
    res.render("about");
 });
 
+app.get("/cart", function(req, res){
+   res.render("cart");
+});
+
 app.listen(process.env.PORT, process.env.IP, function(){
    console.log("Sever started..."); 
 });
