@@ -1,5 +1,6 @@
 /* global $ */
 /* global items */
+/* global localStorage */
 
 $(document).ready(function(){
    //START CAROUSEL
@@ -37,6 +38,35 @@ $(document).ready(function(){
     });
 
   });
+  
+  //CART
+  //localStorage.removeItem("cart");
+    if(localStorage.getItem("cart") === null) {
+        $("#cart").html("Cart is empty.");
+    } else {
+        var items = JSON.parse(localStorage.getItem("cart"));
+        items.forEach(function(item){
+            console.log(item);
+            $("#cart").append("<div><img src='"+ item.img+"'>"+ item.name +"</div>");
+        })
+    }
+    
+    $("#addCart").on("click", function(){
+        var name = $(this).parent().find(".name").text();
+        var price = $(this).parent().find(".price").text();
+        var img = $(this).parent().find(".img").find("img").attr("src");
+        
+       if(localStorage.getItem("cart") === null){
+           var items = [{name: name, price: price, img: img}];
+           localStorage.setItem("cart", JSON.stringify(items));
+           $("#cart").append("<div>"+ name +"</div>")
+       } else {
+           var items = JSON.parse(localStorage.getItem("cart"));
+           console.log(typeof items)
+           items.push({name: name, price: price, img: img});
+           localStorage.setItem("cart", JSON.stringify(items));
+       }
+    });
   
 });
 
