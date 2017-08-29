@@ -45,10 +45,13 @@ $(document).ready(function(){
         $("#cart").html("Cart is empty.");
     } else {
         var items = JSON.parse(localStorage.getItem("cart"));
-        items.forEach(function(item){
+        var total = 0;
+        items.forEach(function(item, index){
             console.log(item);
-            $("#cart").append("<div><img src='"+ item.img+"'>"+ item.name +"</div>");
-        })
+            total += Number(item.price);
+            $("#cart").append("<div class='cartItem'><img src='"+ item.img+"'><div>"+ item.name + "</div><div>$" + item.price +"</div><div><button data-index='"+index+"' class='removeCartItem'>Remove</button></div></div>");
+        });
+        $("#total").text(total);
     }
     
     $("#addCart").on("click", function(){
@@ -67,6 +70,15 @@ $(document).ready(function(){
            localStorage.setItem("cart", JSON.stringify(items));
        }
     });
+    
+    $(".removeCartItem").on("click", function(){
+       var items = JSON.parse(localStorage.getItem("cart"));
+       var index = $(this).data("index");
+      
+       items.splice(index, 1);
+       localStorage.setItem("cart", JSON.stringify(items));
+       $(this).parent().parent().remove();
+    });
   
 });
 
@@ -77,7 +89,7 @@ $(document).ready(function(){
     	$(".showBox .img").html("<img src='"+ items[index].image + "'>");
     	$(".showBox .description").html("<p>" + items[index].description + "</p>");
     	$(".showBox .status").html(items[index].status);
-    	$(".showBox .price").html("$" + items[index].price);
+    	$(".showBox .price").html(items[index].price);
     	
     	//Set status color
     	if(items[index].status == "OUT OF STOCK") {
