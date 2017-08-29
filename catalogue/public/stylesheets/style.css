@@ -174,9 +174,42 @@ main .item button {
   margin: 10px;
 }
 
+#cart {
+  display: table;
+  width: 100%;
+  padding: 0;
+  background: #fff;
+  border-collapse:separate;
+  border-spacing: 0 20px;
+}
+
 #cart img {
   width: 100px;
   height: auto;
+}
+
+#totalPrice {
+  text-align: right;
+  margin: 10px;
+  background: none;
+}
+
+.cartItem {
+  width: 100%;
+  display: table-row;
+}
+
+.cartItem div {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.cartItem button {
+  float: right;
+}
+
+.cartItem:nth-child(even){
+  background: #F7F7F7;
 }
 
 /* SHOW BOX*/
